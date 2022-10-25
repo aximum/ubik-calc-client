@@ -17,9 +17,14 @@
 
 .title {
   color: aliceblue;
-  margin: 0 5rem;
+  margin: 0;
   padding-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: aliceblue;
+  margin: 0 0 2rem 0;
 }
 
 .form {
