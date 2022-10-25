@@ -89,18 +89,18 @@ const UbikCalculator = () => {
                 <source src="https://s.baa.one/videos/landscape/landscape03.mp4" type="video/mp4"></source>
             </video>
             <img className='logo' alt='Ubik logo' src='/assets/Logo_2.png'></img>
-            <h1 className="title">Ubik Rev Share % Calculator</h1>
+            <h1 className="title">Ubik Rev Share (%) Calculator</h1>
             <div className='revenue-container'>
                 <form className="form" onSubmit={addUbik}>
                     <input className="ubik-number-input" type="number" required value={inputValue} onChange={onChangeHandler} placehodler="111" min="1" max="1618"></input>
-                    <input className='ubik-add-button' type="submit" value="Add Ubik"></input>
+                    <input className='ubik-add-button' type="submit" value="Add Ubik #"></input>
                 </form>
                 {ubiks.map((ubik) => {
                     return (
                         <SelectedUbik ubik={ubik} setUbiks={setUbiks} />
                     )
                 })}
-                <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Ubiks</button>
+                <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Rev %</button>
                 {isLoading ? <TfiReload className='icon' /> : ''}
                 <label className='total-revenue-label'>{(totalRevenue > 0 ? `Your Total Rev Share (%): ${totalRevenue.toFixed(4)}` : '')}</label>
                 <div className='ubik-cards-list'>
