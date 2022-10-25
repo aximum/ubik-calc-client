@@ -39,7 +39,7 @@
   min-width: 10ch;
   padding: 1ch 1rem 1ch 1rem;
   background: none;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 8px;
   color: aliceblue;
   font-size: 16px;
@@ -51,22 +51,22 @@
 }
 
 .ubik-add-button {
-  background: none;
-  border: none;
+  background: rgba(173, 164, 8, 0.5);
+  border: 1px solid white;
   /* font-size: 20px; */
   color: white;
   border-radius: 8px;
-  border: 2px solid white;
   margin-left: 1rem;
   padding: 0.5rem;
   padding: auto 1rem;
   transition: all 0.2s ease;
   width: max-content;
+  font-weight: bold;
 }
 
 .ubik-add-button:hover {
   background-color: blueviolet;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
@@ -92,12 +92,12 @@
   font-weight: bold;
   background: none;
   transition: all 0.2s ease;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .selected-ubik-button:hover {
   background-color: blueviolet;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .revenue-container {
@@ -107,10 +107,19 @@
   min-height: 50vh;
 }
 
-.total-revenue-label {
+.total-revenue-container {
   display: block;
+}
+
+.total-revenue-label {
+  display: inline-block;
   color: aliceblue;
   margin-top: 1rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  background-color: rgba(100, 0, 100, 0.5);
+  border-radius: 8px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .calculate-button {
@@ -118,12 +127,14 @@
   margin-top: 2rem;
   display: block;
   text-align: center;
-  background: none;
+  background: rgba(8, 148, 8, 0.5);
   color: aliceblue;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   transition: all 0.2s ease;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 @keyframes spinner {
@@ -146,7 +157,7 @@
 .calculate-button:hover {
   cursor: pointer;
   background-color: blueviolet;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .calculate-button.disabled {
@@ -162,7 +173,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .ubik-card-info {
@@ -201,4 +212,21 @@
 .ubik-card-revenue {
   margin-top: 1rem;
   font-weight: bold;
+}
+
+.icon-var {
+  color: aliceblue;
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.icon-var:hover {
+  cursor: pointer;
+  color: rgb(181, 128, 230);
+}
+
+.hints {
+  color: white;
+  line-height: 1.5rem;
 }

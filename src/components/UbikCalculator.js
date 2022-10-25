@@ -3,6 +3,7 @@ import './UbikCalculator.css';
 import { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { TfiReload } from 'react-icons/tfi'
+import { BsFillInfoCircleFill } from 'react-icons/bs'
 
 const SelectedUbik = (props) => {
 
@@ -46,6 +47,7 @@ const UbikCalculator = () => {
     const [totalRevenue, setTotalRevenue] = useState(0)
 
     const [isLoading, setIsLoading] = useState(false);
+    const [hints, setHints] = useState(false);
 
     const onChangeHandler = event => {
         setInputValue(event.target.value)
@@ -94,7 +96,13 @@ const UbikCalculator = () => {
                 <form className="form" onSubmit={addUbik}>
                     <input className="ubik-number-input" type="number" required value={inputValue} onChange={onChangeHandler} placehodler="111" min="1" max="1618"></input>
                     <input className='ubik-add-button' type="submit" value="Add Ubik #"></input>
+                    <BsFillInfoCircleFill className='icon-var' onClick={() => {
+                        hints ? setHints(false) : setHints(true)
+                    }} />
                 </form>
+                {hints ? <p className='hints'><b>1.</b> Add your Ubik #s one at a time.<br></br>
+                    <b>2.</b> Click 'Calculate Rev %'.<br></br>
+                    <b>Note:</b> Values will change dynamically as Ubiks level up. <br></br>Allow ten minutes for new Upgrades to appear.</p> : <></>}
                 {ubiks.map((ubik) => {
                     return (
                         <SelectedUbik ubik={ubik} setUbiks={setUbiks} />
@@ -102,7 +110,9 @@ const UbikCalculator = () => {
                 })}
                 <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Rev %</button>
                 {isLoading ? <TfiReload className='icon' /> : ''}
-                <label className='total-revenue-label'>{(totalRevenue > 0 ? `Your Total Rev Share (%): ${totalRevenue.toFixed(4)}` : '')}</label>
+                <div className='total-revenue-container'>
+                    {(totalRevenue > 0) ? <label className='total-revenue-label'>Your Total Rev Share (%): {totalRevenue.toFixed(4)}</label> : <></>}
+                </div>
                 <div className='ubik-cards-list'>
                     {ubikData.map((ubik) => {
                         return (
