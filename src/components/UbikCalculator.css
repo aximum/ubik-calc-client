@@ -1,0 +1,209 @@
+.logo {
+  width: 5rem;
+  display: block;
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.bg-video {
+  position: fixed;
+  top: -10vh;
+  left: -10vw;
+  height: 120vh;
+  z-index: -1;
+}
+
+.bg-tint {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+}
+
+.title {
+  color: aliceblue;
+  margin: 0 5rem;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form {
+  margin-top: 2rem;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.form-subcontainer {
+  padding: 0;
+}
+
+.ubik-number-input {
+  width: 10%;
+  min-width: 10ch;
+  padding: 1ch 1rem 1ch 1rem;
+  background: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: aliceblue;
+  font-size: 16px;
+  outline: 0;
+}
+
+.input-hint {
+  color: aliceblue;
+}
+
+.ubik-add-button {
+  background: none;
+  border: none;
+  /* font-size: 20px; */
+  color: white;
+  border-radius: 8px;
+  border: 2px solid white;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  padding: auto 1rem;
+  transition: all 0.2s ease;
+  width: max-content;
+}
+
+.ubik-add-button:hover {
+  background-color: blueviolet;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.selected-ubik-div {
+  display: inline-block;
+  padding: 0.5ch 1ch 0.5ch 1ch;
+  background-color: rgb(66, 8, 79);
+  border: 2px solid rgb(66, 8, 79);
+  border-radius: 0.5rem;
+  margin: 1rem 0.5rem 0 0.5rem;
+}
+
+.selected-ubik {
+  color: aliceblue;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.selected-ubik-button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-weight: bold;
+  background: none;
+  transition: all 0.2s ease;
+  border: 2px solid white;
+}
+
+.selected-ubik-button:hover {
+  background-color: blueviolet;
+  border: 2px solid transparent;
+}
+
+.revenue-container {
+  background-color: rgba(100, 0, 100, 0.2);
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 1rem 5rem 2rem 5rem;
+  border-radius: 2rem;
+  min-height: 50vh;
+}
+
+.total-revenue-label {
+  display: block;
+  color: aliceblue;
+  margin-top: 1rem;
+}
+
+.calculate-button {
+  margin: auto;
+  margin-top: 2rem;
+  display: block;
+  text-align: center;
+  background: none;
+  color: aliceblue;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.icon {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  width: fit-content;
+  animation: spinner 1.5s linear infinite;
+}
+
+.calculate-button:hover {
+  cursor: pointer;
+  background-color: blueviolet;
+  border: 2px solid transparent;
+}
+
+.calculate-button.disabled {
+  visibility: hidden;
+}
+
+.calculate-button.enabled {
+  visibility: visible;
+}
+
+.ubik-cards-list {
+  display: block;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.ubik-card-info {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(100, 0, 100, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ubik-card {
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  background-color: rgba(100, 0, 100, 0.5);
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.ubik-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 0.5rem;
+}
+
+.ubik-card-label {
+  display: block;
+  color: aliceblue;
+}
+
+.alt {
+  display: inline;
+  margin: auto;
+}
+
+.ubik-card-revenue {
+  margin-top: 1rem;
+  font-weight: bold;
+}
