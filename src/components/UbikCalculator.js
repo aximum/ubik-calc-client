@@ -111,7 +111,7 @@ const UbikCalculator = () => {
                 <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Rev %</button>
                 {isLoading ? <TfiReload className='icon' /> : ''}
                 <div className='total-revenue-container'>
-                    {(totalRevenue > 0) ? <label className='total-revenue-label'>Your Total Rev Share (%): <span className='total-revenue-value'>{totalRevenue.toFixed(4)}</span></label> : <></>}
+                    {(totalRevenue > 0) ? <label className='total-revenue-label'>Your Total Rev Share: <span className='total-revenue-value'>{totalRevenue.toFixed(4)}%</span></label> : <></>}
                 </div>
                 <div className='ubik-cards-list'>
                     {ubikData.map((ubik) => {
