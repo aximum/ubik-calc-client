@@ -31,7 +31,7 @@ const UbikCard = (props) => {
                 <label className='ubik-card-healthy ubik-card-label alt'>{props.healthy === 3 ? 'Unhealthy' : 'Healthy'}</label>
             </div>
             {/* <label className='ubik-card-mutated ubik-card-label'>Mutated: {props.mutated === 1.1 ? 'Yes' : 'No'}</label> */}
-            <label className='ubik-card-revenue ubik-card-label'>Rev Share (%): {props.revenue.toFixed(4)}</label>
+            <label className='ubik-card-revenue ubik-card-label'>Rev Share: {props.revenue.toFixed(4)}%</label>
         </div>
     )
 }
@@ -70,7 +70,7 @@ const UbikCalculator = () => {
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then((response) => { setUbikData(response.data); setIsLoading(false) }).catch(() => {
+        }).then((response) => { setUbikData([...response.data].sort((a, b) => a.ubik < b.ubik ? -1 : 1)); setIsLoading(false) }).catch(() => {
             alert('Error')
             setIsLoading(false)
         })
@@ -91,7 +91,7 @@ const UbikCalculator = () => {
                 <source src="https://s.baa.one/videos/landscape/landscape03.mp4" type="video/mp4"></source>
             </video>
             <img className='logo' alt='Ubik logo' src='/assets/Logo_2.png'></img>
-            <h1 className="title">Lookout</h1>
+            <h1 className="title">The Lookout</h1>
             <h2 className="subtitle">Calculate Your Ubik Revenue Share</h2>
             <div className='revenue-container'>
                 <form className="form" onSubmit={addUbik}>
@@ -109,7 +109,7 @@ const UbikCalculator = () => {
                         <SelectedUbik ubik={ubik} setUbiks={setUbiks} />
                     )
                 })}
-                <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Rev %</button>
+                <button className={`calculate-button ${(ubiks.length === 0 ? 'disabled' : 'enabled')}`} onClick={calculateUbiks} disabled={isLoading}>Calculate Rev Share</button>
                 {isLoading ? <TfiReload className='icon' /> : ''}
                 <div className='total-revenue-container'>
                     {(totalRevenue > 0) ? <label className='total-revenue-label'>Your Total Rev Share: <span className='total-revenue-value'>{totalRevenue.toFixed(4)}%</span></label> : <></>}
