@@ -57,9 +57,9 @@ const UbikCalculator = () => {
 
         event.preventDefault()
 
-        const duplicateCheck = ubiks.find((ubik) => ubik === inputValue)
+        const duplicateCheck = ubiks.find((ubik) => ubik === Number(inputValue))
         if (!duplicateCheck && inputValue !== '') {
-            setUbiks((ubiks) => ubiks.concat(inputValue))
+            setUbiks((ubiks) => ubiks.concat(Number(inputValue)))
         }
         setInputValue('')
     }
