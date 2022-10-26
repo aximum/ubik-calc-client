@@ -92,7 +92,7 @@ const UbikCalculator = () => {
             </video>
             <img className='logo' alt='Ubik logo' src='/assets/Logo_2.png'></img>
             <h1 className="title">Lookout</h1>
-            <h2 className="subtitle">Calculate Your Rev Share</h2>
+            <h2 className="subtitle">Calculate Your Ubik Revenue Share</h2>
             <div className='revenue-container'>
                 <form className="form" onSubmit={addUbik}>
                     <input className="ubik-number-input" type="number" required value={inputValue} onChange={onChangeHandler} placehodler="111" min="1" max="1618"></input>
