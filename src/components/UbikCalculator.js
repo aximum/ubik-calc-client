@@ -87,9 +87,11 @@ const UbikCalculator = () => {
 
     return (
         <>
-            <video autoPlay loop muted playsInline preload='auto' className='bg-video'>
-                <source src="https://s.baa.one/videos/landscape/landscape03.mp4" type="video/mp4"></source>
-            </video>
+            <div className='bg-video-container'>
+                <video autoPlay loop muted playsInline preload='auto' className='bg-video'>
+                    <source src="https://s.baa.one/videos/landscape/landscape03.mp4" type="video/mp4"></source>
+                </video>
+            </div>
             <img className='logo' alt='Ubik logo' src='/assets/Logo_2.png'></img>
             <h1 className="title">The Lookout</h1>
             <h2 className="subtitle">Calculate Your Ubik Revenue Share</h2>
